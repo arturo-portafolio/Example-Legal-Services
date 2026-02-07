@@ -131,8 +131,8 @@ export default function Home() {
                 {/* professional man lawyer suit office portrait */}
                 <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
                   <div className="absolute inset-0 bg-primary/10 mix-blend-multiply z-10" />
- <img
-  src="https://images.unsplash.com/photo-1528747045269-390fe33c19a3?auto=format&fit=crop&q=80&w=800"
+<img
+  src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800"
   alt="Law office desk"
   className="object-cover w-full h-full transform hover:scale-105 transition-transform duration-700"
 />
