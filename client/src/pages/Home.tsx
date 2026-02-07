@@ -359,10 +359,10 @@ export default function Home() {
                       <div className="bg-white p-3 rounded-full shadow-sm group-hover:shadow text-primary">
                         <Mail className="h-6 w-6" />
                       </div>
-                      <div>
-                        <div className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Email Me</div>
-                        <div className="text-xl font-bold text-primary">example@lawoffice.com</div>
-                      </div>
+<div className="min-w-0 flex-1">
+  <div className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Email Me</div>
+  <div className="text-xl font-bold text-primary break-all">example@lawoffice.com</div>
+</div>
                     </a>
                   </div>
 
