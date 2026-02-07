@@ -1,0 +1,197 @@
+1) Objetivo
+- Crear una single-page web en inglés para un abogado independiente (solo practitioner) que ofrece servicios legales personales.
+- La web debe ser muy ligera, sin backend, sin base de datos, sin autenticación y sin formularios complejos.
+- Proyecto pensado para ser generado y editado en Replit, y desplegado fácilmente en Vercel.
+- Stack deseado: Vite + React (priorizar simplicidad y estabilidad sobre funcionalidades extra).
+
+2) Requisitos UI/UX
+- Idioma de la interfaz: exclusivamente inglés.
+- Diseño limpio, profesional y sobrio, orientado a un abogado individual (no parecer gran firma).
+- Esquema de color: tonos claros (por ejemplo, fondo blanco o gris muy claro) con acentos en azul oscuro o verde oscuro para transmitir confianza.
+- Tipografía: usar system fonts para evitar dependencias externas (por ejemplo: `-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif`).
+- Layout responsive:
+  - Desktop: contenido centrado, ancho máximo ~1200px, secciones apiladas verticalmente con suficiente espacio en blanco.
+  - Mobile: diseño en una sola columna, tipografías legibles, paddings cómodos; el menú de navegación puede ser simple (links horizontales o stackeados arriba, sin necesidad de hamburguesa si se mantiene minimalista).
+- Navegación:
+  - Menú simple en el header con enlaces que hacen scroll a secciones de la misma página (anchor links o scroll suave).
+  - Sin enrutadores adicionales; no usar React Router.
+- Elementos interactivos:
+  - Botón principal "Contact" en el Hero que hace scroll a la sección Contact.
+  - Hover states simples en enlaces y botón (cambio de color de fondo/borde, sin animaciones complejas ni librerías de animación).
+- Accesibilidad:
+  - Estructura de headings semántica (h1 para el título principal, h2 para secciones, etc.).
+  - Texto con alto contraste sobre el fondo.
+  - Asegurar focus states visibles en links y botones.
+  - Iconos de redes sociales con `aria-label` o texto accesible para lectores de pantalla.
+- Footer:
+  - Incluir únicamente iconos clicables de redes sociales (Facebook, Instagram, Twitter/X, TikTok) con enlaces configurables.
+  - Mostrar el número de teléfono claramente visible.
+  - No agregar otros textos, menús ni elementos adicionales.
+
+3) Estructura de secciones
+- Estructura general en un solo componente raíz (ej. `<App />`) que renderiza secciones en orden:
+
+  a) Header
+    - Contiene el “brand name” del abogado (por ejemplo, “John Smith Law”).
+    - Navegación simple con links a: About, Services, Why Choose Me, Process, Contact.
+    - Layout: brand alineado a la izquierda y navegación a la derecha en desktop; en móvil los elementos pueden apilarse.
+
+  b) Hero
+    - Frase corta y clara comunicando el valor principal.
+    - Subtítulo muy breve explicando especialización (por ejemplo, “Personal legal support tailored to your situation.”).
+    - Botón principal “Contact” que hace scroll a la sección Contact.
+    - Fondo simple (color sólido o muy suave), sin imágenes pesadas ni sliders.
+
+  c) About
+    - Título: “About Me”.
+    - Uno o dos párrafos cortos presentando al abogado (formación, enfoque, valores).
+    - Orientado a transmitir cercanía, profesionalismo y atención personalizada.
+
+  d) Services
+    - Título: “Services”.
+    - Lista de 3–6 servicios principales (por ejemplo: Family Law, Immigration, Contracts, etc.).
+    - Cada servicio con un título y una breve descripción (1–2 frases).
+
+  e) Why Choose Me
+    - Título: “Why Choose Me”.
+    - Lista de 3–4 razones clave (por ejemplo: personalized attention, clear communication, flexible scheduling).
+    - Puede usar bullets o pequeñas “cards” sin imágenes.
+
+  f) Process
+    - Título: “How It Works” o “My Process”.
+    - 3 pasos muy breves (por ejemplo: 1) Initial Consultation, 2) Strategy & Planning, 3) Ongoing Support).
+    - Cada paso con título y una frase explicativa.
+
+  g) Contact
+    - Título: “Contact”.
+    - Texto corto explicando cómo ponerse en contacto (por teléfono y/o email).
+    - No usar formularios complejos; como máximo, un enlace `mailto:` y la indicación de llamar al número de teléfono.
+    - El botón “Contact” del Hero debe hacer scroll aquí.
+
+  h) Footer
+    - Iconos de redes sociales: Facebook, Instagram, Twitter/X, TikTok.
+      - Pueden implementarse con SVGs simples o texto/emoji estilizado para evitar librerías de iconos.
+      - Cada icono enlaza a una URL configurable (placeholder inicialmente).
+    - Número de teléfono visible (ejemplo: “Call: +1 (555) 123-4567”).
+    - Sin otros elementos (sin menús, sin textos legales adicionales).
+
+4) Contenido placeholder en inglés (texto corto)
+- Header:
+  - Brand: “John Smith Law”
+  - Nav links: “About”, “Services”, “Why Choose Me”, “Process”, “Contact”
+
+- Hero:
+  - Heading (h1): “Clear, personal legal guidance.”
+  - Subheading: “I help individuals navigate legal issues with clarity and confidence.”
+  - Button: “Contact”
+
+- About:
+  - Section title: “About Me”
+  - Text placeholder:
+    - “I am an independent attorney dedicated to providing clear, practical legal advice tailored to your situation.”
+    - “With a focus on personal attention and transparent communication, I guide you through each step of your legal matter.”
+
+- Services:
+  - Section title: “Services”
+  - Example list items:
+    - “Family Law – Support with divorce, custody, and related matters.”
+    - “Immigration – Guidance on visas, residency, and immigration procedures.”
+    - “Contracts – Drafting and reviewing agreements for individuals and small businesses.”
+    - “Civil Disputes – Advice and representation in personal disputes.”
+    - “Consultations – One-time legal consultations to answer your key questions.”
+
+- Why Choose Me:
+  - Section title: “Why Choose Me”
+  - Example points:
+    - “Personal Attention – You work directly with me on every detail of your case.”
+    - “Clear Communication – I explain your options in simple, understandable language.”
+    - “Flexible Appointments – Remote and in-person meetings by appointment.”
+    - “Focused on Results – I aim to achieve practical outcomes that fit your real needs.”
+
+- Process:
+  - Section title: “How It Works”
+  - Steps:
+    - “1. Initial Consultation – We discuss your situation and goals.”
+    - “2. Strategy & Plan – I outline your options and recommend a clear path forward.”
+    - “3. Ongoing Support – I guide you through each step until your matter is resolved.”
+
+- Contact:
+  - Section title: “Contact”
+  - Text placeholder:
+    - “Ready to discuss your situation?”
+    - “Call me at +1 (555) 123-4567 or email me at example@lawoffice.com.”
+    - “I respond as soon as possible during business hours.”
+
+- Footer:
+  - Social label placeholders (aria-labels):
+    - “Facebook profile”
+    - “Instagram profile”
+    - “Twitter/X profile”
+    - “TikTok profile”
+  - Phone text:
+    - “Call: +1 (555) 123-4567”
+
+5) Requisitos técnicos para Vercel (Vite + React)
+- Estructura del proyecto:
+  - Crear proyecto con Vite + React (JavaScript o TypeScript; elegir uno y mantenerlo consistente).
+  - Sin backend: solo front-end estático.
+  - Código organizado, por ejemplo:
+    - `index.html`
+    - `src/main.(jsx|tsx)`
+    - `src/App.(jsx|tsx)`
+    - `src/components/` (opcional, para secciones como Header, Hero, etc.)
+    - `src/styles.css` o similar para estilos globales.
+- Dependencias:
+  - Solo las mínimas necesarias:
+    - Dependencias: `react`, `react-dom`.
+    - DevDependencies: `vite` y lo que Vite requiera por defecto.
+  - No usar librerías pesadas de UI (sin Bootstrap, sin Tailwind, sin Material UI).
+  - No usar librerías de iconos (Font Awesome, react-icons, etc.); implementar iconos con SVGs simples o texto.
+- Scripts en `package.json`:
+  - `"scripts": { "dev": "vite", "build": "vite build", "preview": "vite preview" }`
+  - Asegurarse de que el comando `npm run build` genere la salida en `dist`.
+- Configuración Vite:
+  - Usar configuración estándar de Vite para React.
+  - No configurar rutas especiales ni base paths raros; dejar el `base` por defecto para despliegue en raíz.
+- Despliegue en Vercel:
+  - El proyecto debe ser compatible con la detección automática de Vercel:
+    - Framework: “Vite” (Vercel lo detecta automáticamente).
+    - Build command: `npm run build`.
+    - Output directory: `dist`.
+  - Incluir un archivo `README.md` en la raíz del proyecto con instrucciones claras:
+    - Cómo instalar y correr localmente: `npm install`, `npm run dev`.
+    - Cómo hacer build: `npm run build`.
+    - Cómo desplegar en Vercel: importar el repositorio, seleccionar framework Vite cuando Vercel lo solicite (si no lo detecta), build command y output directory correctos.
+- Otros aspectos técnicos:
+  - Evitar uso de APIs externas o integraciones que requieran claves.
+  - Sin configuración de servidor ni funciones serverless.
+  - Compatibilidad con navegadores modernos (Chrome, Firefox, Safari, Edge).
+
+6) Criterios de “done”
+- Compilación y build:
+  - El proyecto corre localmente sin errores con `npm install` y `npm run dev`.
+  - El comando `npm run build` se ejecuta sin errores y genera la carpeta `dist`.
+  - La app se despliega correctamente en Vercel usando `npm run build` y `dist` como salida.
+- UI/UX:
+  - Todas las secciones especificadas existen y están en inglés: Header, Hero, About, Services, Why Choose Me, Process, Contact y Footer.
+  - El footer solo contiene iconos de redes sociales (Facebook, Instagram, Twitter/X, TikTok) y el número de teléfono visible.
+  - El botón “Contact” en el Hero hace scroll a la sección Contact.
+  - La navegación en el header hace scroll a las secciones correspondientes.
+- Responsividad:
+  - En pantallas de ~320px de ancho (móvil), el contenido es legible, sin desbordes horizontales, con márgenes y paddings adecuados.
+  - En pantallas de tablet y desktop, el contenido se adapta (máximo ancho centrado, secciones con buen espaciado).
+  - El header y el hero se ven correctamente en móvil y desktop.
+- Diseño y accesibilidad:
+  - El estilo es limpio, profesional, con una paleta sobria.
+  - Se utiliza una jerarquía de headings adecuada.
+  - Los enlaces y botones tienen estados de hover y focus visibles.
+  - Iconos de redes sociales tienen etiquetas accesibles (`aria-label` o texto oculto).
+- Simplicidad técnica:
+  - El número de dependencias es mínimo (solo React, ReactDOM y Vite-related).
+  - No se incluyen librerías de UI, iconos, animaciones ni routing adicionales.
+  - No hay backend, no hay base de datos, no hay autenticación ni formularios complejos.
+- Documentación:
+  - `README.md` incluye instrucciones breves para:
+    - Ejecutar en local.
+    - Generar el build.
+    - Desplegar en Vercel.
