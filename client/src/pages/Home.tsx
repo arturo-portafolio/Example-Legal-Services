@@ -131,11 +131,11 @@ export default function Home() {
                 {/* professional man lawyer suit office portrait */}
                 <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
                   <div className="absolute inset-0 bg-primary/10 mix-blend-multiply z-10" />
-                  <img 
-                    src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&q=80&w=800" 
-                    alt="John Smith - Attorney" 
-                    className="object-cover w-full h-full transform hover:scale-105 transition-transform duration-700"
-                  />
+ <img
+  src="https://images.unsplash.com/photo-1528747045269-390fe33c19a3?auto=format&fit=crop&q=80&w=800"
+  alt="Law office desk"
+  className="object-cover w-full h-full transform hover:scale-105 transition-transform duration-700"
+/>
                 </div>
                 {/* Decorative element */}
                 <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-secondary/10 rounded-full -z-10 blur-2xl" />
